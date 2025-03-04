@@ -110,17 +110,50 @@ class Program
         input.Close();
     }
 
+    static int GetFuelConsumption(int weight)
+    {
+        if (weight > 2000) return -1;
+        if (weight > 1500) return 9;
+        if (weight > 1000) return 7;
+        if (weight > 500) return 4;
+        return 1;
+    }
     public static void task4()
     {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        StreamReader input = new StreamReader("fly.txt");
+        int fuelCapacity = Convert.ToInt32(input.ReadLine());
+        int distanceAB = Convert.ToInt32(input.ReadLine());
+        int distanceBC = Convert.ToInt32(input.ReadLine());
+        int cargoWeight = Convert.ToInt32(input.ReadLine());
         
+        int fuelConsumption = GetFuelConsumption(cargoWeight);
+
+        if (fuelCapacity == -1)
+            Console.WriteLine("Літак не може підняти такий вантаж.");
+        
+        int fuelNeededAB = distanceAB * fuelConsumption;
+        int fuelNeededBC = distanceBC * fuelConsumption;
+        
+        if (fuelNeededAB > fuelCapacity)
+            Console.WriteLine("Літак не може долетіти до пункту B.");
+        
+        int remainingFuel = fuelCapacity - fuelNeededAB;
+        
+        int refuelNeeded = Math.Max(0, fuelNeededBC - remainingFuel);
+        
+        if (refuelNeeded + remainingFuel > fuelCapacity)
+            Console.WriteLine("Літак не може долетіти до пункту C навіть після дозаправки.");
+        
+        input.Close();
     }
 
     static void Main(string[] args)
     {
-        //double result = task1();
-        //Console.WriteLine(result);
-        //task2();
+        task1();
+        task2();
         task3();
+        task4();
         Console.ReadKey();
     }
 }
