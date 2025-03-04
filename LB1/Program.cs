@@ -141,15 +141,14 @@ class Program
         if (refuelNeeded + remainingFuel > fuelCapacity)
             Console.WriteLine("Літак не може долетіти до пункту C навіть після дозаправки.");
         
-        
         input.Close();
     }
 
     static void Main(string[] args)
     {
-        //task1();
-        //task2();
-        //task3();
+        task1();
+        task2();
+        task3();
         task4();
         Console.ReadKey();
     }
