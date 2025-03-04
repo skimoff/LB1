@@ -12,3 +12,4 @@ D:\LB4\ConsoleApp1\LB1\obj\Debug\net9.0\refint\LB1.dll
 D:\LB4\ConsoleApp1\LB1\obj\Debug\net9.0\LB1.pdb
 D:\LB4\ConsoleApp1\LB1\obj\Debug\net9.0\LB1.genruntimeconfig.cache
 D:\LB4\ConsoleApp1\LB1\obj\Debug\net9.0\ref\LB1.dll
+D:\LB4\ConsoleApp1\LB1\obj\Debug\net9.0\LB1.sourcelink.json
