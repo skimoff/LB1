@@ -106,7 +106,7 @@ class Program
         input.Close();
     }
 
-    static int GetFuelConsumption(int weight)
+    public static int GetFuelConsumption(int weight)
     {
         if (weight > 2000) return -1;
         if (weight > 1500) return 9;
