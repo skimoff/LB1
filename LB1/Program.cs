@@ -145,6 +145,12 @@ class Program
         if (refuelNeeded + remainingFuel > fuelCapacity)
             Console.WriteLine("Літак не може долетіти до пункту C навіть після дозаправки.");
         
+        if (remainingFuel == 0)
+            Console.WriteLine("Літак може долетіти до пункту С навіть без дозаправки");
+        else
+            Console.WriteLine($"Літак може долетіти до пункту С лише з дозаправкой у {remainingFuel} л.");
+        
+        
         input.Close();
     }
 
